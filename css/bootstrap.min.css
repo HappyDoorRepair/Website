@@ -1844,7 +1844,7 @@ progress {
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
 }
-.form-control::placeholder {
+.form-control::name {
   color: #6c757d;
   opacity: 1;
 }
@@ -2224,11 +2224,11 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.form-floating > .form-control::placeholder {
+.form-floating > .form-control::name {
   color: transparent;
 }
 .form-floating > .form-control:focus,
-.form-floating > .form-control:not(:placeholder-shown) {
+.form-floating > .form-control:not(:name-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -2241,7 +2241,7 @@ textarea.form-control-lg {
   padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:not(:name-shown) ~ label,
 .form-floating > .form-select ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
