@@ -259,6 +259,39 @@
     <!-- Testimonial End -->
 
     <!-- Services Start -->
+    <script>
+      // Function to show the description alert
+      function showDescription(serviceName) {
+        // Define descriptions for each service
+        const descriptions = {
+          'Preventative Maintenance': 'Our preventative maintenance service helps ensure the longevity of your garage door by identifying and addressing potential issues before they become major problems.',
+          'Bent or Misaligned Tracks': 'If your garage door tracks are bent or misaligned, it can cause operational issues. We specialize in fixing these problems to ensure smooth door operation.',
+          'Broken Springs': 'Broken springs can render your garage door inoperable. Our experts can replace broken springs to get your door working again safely.',
+          'Broken Motor': 'A malfunctioning motor can be a hassle. Our team is skilled in diagnosing and repairing broken garage door motors to restore your door\'s functionality.',
+          'Broken or Bent Rollers': 'Rollers play a crucial role in the smooth operation of your garage door. We can replace broken or bent rollers to prevent further damage.',
+          'Broken Chain or Belt': 'A broken opener chain or belt can leave your garage door stuck. Our technicians can repair or replace the it to get your door moving again.'
+        };
+    
+        // Get the description based on the service name
+        const description = descriptions[serviceName];
+    
+        // Display the description in an alert
+        alert(description);
+      }
+    
+      // Attach click event handlers to the "View Detail" buttons
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.service-item .btn');
+        buttons.forEach(function(button) {
+          button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const serviceName = this.parentNode.querySelector('h3').textContent;
+            showDescription(serviceName);
+          });
+        });
+      });
+        </script>
+
     <div class="container-fluid py-5">
       <div class="container py-5">
         <div class="text-center mx-auto mb-5" style="max-width: 500px">
@@ -273,7 +306,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-paint-brush"></i></div>
               </div>
-              <h3 class="mt-5">Regular Painting</h3>
+              <h3 class="mt-5">Preventative Maintenance</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i
               ></a>
@@ -286,7 +319,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-paint-roller"></i></div>
               </div>
-              <h3 class="mt-5">Wall Painting</h3>
+              <h3 class="mt-5">Bent or Misaligned Tracks</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i
               ></a>
@@ -299,7 +332,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-brush"></i></div>
               </div>
-              <h3 class="mt-5">Floor Coating</h3>
+              <h3 class="mt-5">Broken Springs</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i
               ></a>
@@ -312,7 +345,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-eraser"></i></div>
               </div>
-              <h3 class="mt-5">Graffiti Removal</h3>
+              <h3 class="mt-5">Broken Motor</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i
               ></a>
@@ -325,7 +358,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-spray-can"></i></div>
               </div>
-              <h3 class="mt-5">Mildew Removal</h3>
+              <h3 class="mt-5">Broken or Bent Rollers</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i
               ></a>
@@ -338,7 +371,7 @@
               <div class="service-icon p-3">
                 <div><i class="fa fa-2x fa-city"></i></div>
               </div>
-              <h3 class="mt-5">Window Washing</h3>
+              <h3 class="mt-5">Broken Chain or Belt</h3>
               <a class="btn shadow-none text-secondary" href=""
                 >View Detail<i class="bi bi-arrow-right ms-1"></i 
               ></a>
@@ -356,7 +389,7 @@
           <div class="col-lg-6">
             <div class="bg-white text-center p-5">
               <h1 class="mb-4">Get A Quote</h1>
-              <form> 
+              <form action="https://formspree.io/f/xjvqpgqq" method="POST">
                 <div class="row g-3">
                   <div class="col-12 col-sm-6">
                     <input
@@ -364,6 +397,7 @@
                       class="form-control bg-light border-0"
                       placeholder="Your Name"
                       style="height: 55px"
+                      name="Your Name"
                     />
                   </div>
                   <div class="col-12 col-sm-6">
@@ -372,6 +406,7 @@
                       class="form-control bg-light border-0"
                       placeholder="Your Email"
                       style="height: 55px"
+                      name="_replyto"
                     />
                   </div>
                   <div class="col-12">
@@ -379,6 +414,7 @@
                       class="form-control bg-light border-0 py-3"
                       rows="2"
                       placeholder="Message"
+                      name="Message"
                     ></textarea>
                   </div>
                   <div class="col-12">
@@ -388,6 +424,7 @@
                   </div>
                 </div>
               </form>
+              
             </div>
           </div>
         </div>
@@ -417,22 +454,22 @@
               <hr class="w-25 text-secondary mb-4" style="opacity: 1" />
               <div class="d-flex flex-column justify-content-start">
                 <a class="text-light mb-2" 
-                  ><i class="fa fa-angle-right me-2"></i>Regular Painting</a
+                  ><i></i>Preventative Maintenance</a
                 >
                 <a class="text-light mb-2" 
-                  ><i class="fa fa-angle-right me-2"></i>Wall Painting</a
+                  ><i></i>Bent or Misaligned Tracks</a
                 >
                 <a class="text-light mb-2" 
-                  ><i class="fa fa-angle-right me-2"></i>Floor Coating</a
+                  ><i></i>Broken Springs</a
                 >
                 <a class="text-light mb-2" 
-                  ><i class="fa fa-angle-right me-2"></i>Graffiti Removal</a
+                  ><i></i>Broken Motor</a
                 >
                 <a class="text-light mb-2" 
-                  ><i class="fa fa-angle-right me-2"></i>Mildew Removal</a
+                  ><i></i>Broken or Bent Rollers</a
                 >
                 <a class="text-light" 
-                  ><i class="fa fa-angle-right me-2"></i>Window Washing</a
+                  ><i></i>Broken Chain or Belt</a
                 >
               </div>
             </div>
@@ -454,17 +491,24 @@
             <div class="col-lg-3 col-md-6">
               <h4 class="text-primary">Newsletter</h4>
               <hr class="w-25 text-secondary mb-4" style="opacity: 1" />
-              <form action="">
+              <form action="https://formspree.io/f/xjvqpgqq" method="POST">
                 <div class="input-group">
                   <input
-                    type="text"
+                    type="email"
                     class="form-control p-3 border-0"
                     placeholder="Your Email"
+                    name="_replyto"
                   />
-                  <button class="btn btn-primary">Sign Up</button>
+                  <input
+                    type="hidden"
+                    name="Your Email"
+                    value="Your Email"
+                  />
+                  <button class="btn btn-primary" type="submit">Sign Up</button>
                 </div>
               </form>
-              <h6 class="text-primary mt-4 mb-3">Follow Us</h6>
+              
+              <!-- <h6 class="text-primary mt-4 mb-3">Follow Us</h6>
               <div class="d-flex">
                 <a
                   class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
@@ -485,7 +529,7 @@
                   class="btn btn-lg btn-primary btn-lg-square rounded-circle"
                   href="#"
                   ><i class="fab fa-instagram"></i
-                ></a>
+                ></a> -->
               </div>
             </div>
           </div>
